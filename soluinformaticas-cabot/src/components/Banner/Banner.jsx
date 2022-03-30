@@ -3,7 +3,7 @@ import { SpeakerphoneIcon, XIcon } from '@heroicons/react/outline'
 export default function Banner() {
     return (
         <div className="bg-gray-600">
-            <div className="max-w-9xl mx-auto py-3 px-3 lg:px-8 pl-8">
+            <div className="max-w-9xl mx-auto py-3 px-6 lg:px-8 pl-8">
                 <div className="flex items-center justify-between flex-wrap">
                     <div className="w-0 flex-1 flex items-center">
                         <span className="flex p-2 rounded-lg bg-gray-800">
