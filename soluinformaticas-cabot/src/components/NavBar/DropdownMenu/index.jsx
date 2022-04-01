@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Icono from "../Icono/Icono";
+import Icono from "../Icono";
 
 export default function DropdownMenu({openCloseNew}) {
     return (

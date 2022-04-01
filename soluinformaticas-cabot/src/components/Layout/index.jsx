@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import NavBar from "../NavBar/NavBar";
-import DropdownMenu from "../NavBar/DropdownMenu/DopdownMenu";
-import Footer from "../Footer/Footer";
+import NavBar from "../NavBar";
+import DropdownMenu from "../NavBar/DropdownMenu";
+import Footer from "../Footer";
 
-export default function Container({children}) {
+export default function Layout({children}) {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {

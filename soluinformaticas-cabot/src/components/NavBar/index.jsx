@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Icono from "./Icono/Icono";
-import Logo from "./Logo/Logo";
+import Icono from "./Icono";
+import Logo from "./Logo";
 
 export default function NavBar({openClose}) {
     return (

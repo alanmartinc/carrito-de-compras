@@ -1,6 +1,6 @@
-import Banner from "../components/Banner/Banner";
-import Header from "../components/Header/Header";
-import ItemListContainer from "../components/ItemListContainer";
+import Banner from "../../components/Banner";
+import Header from "../../components/Header";
+import ItemListContainer from "../../components/ItemListContainer";
 
 export default function Home() {
   return (
