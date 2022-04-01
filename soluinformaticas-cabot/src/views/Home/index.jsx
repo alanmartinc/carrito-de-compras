@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <div className="h-screen">
       <Banner />
-      <ItemListContainer greeting={"Hola Mundo"} />
       <Header />
+      <ItemListContainer />
     </div>
   );
 }
