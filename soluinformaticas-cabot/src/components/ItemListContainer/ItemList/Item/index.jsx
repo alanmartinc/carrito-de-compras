@@ -6,6 +6,6 @@ export default function Item() {
     }
 
     return (
-        <ItemCount onAdd={onAdd} />
+        <ItemCount stock="5" initial="1" onAdd={onAdd} />
     );
 }

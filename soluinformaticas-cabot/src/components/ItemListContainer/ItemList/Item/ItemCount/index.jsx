@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-export default function ItemCount({ onAdd }) {
+export default function ItemCount({stock, initial, onAdd }) {
     const [cant, setCant] = useState(0);
 
     const handleIncrement = () => {
