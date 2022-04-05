@@ -26,8 +26,8 @@ export default function Layout({children}) {
 
     return (
         <div className="h-screen">
-            <NavBar openClose={toggleOpen} />
-            {isOpen && <DropdownMenu openCloseNew={toggleOpen} />}
+            <NavBar handleOpenClose={toggleOpen} />
+            {isOpen && <DropdownMenu handleOpenCloseNew={toggleOpen} />}
             {children}
             <Footer />
         </div>

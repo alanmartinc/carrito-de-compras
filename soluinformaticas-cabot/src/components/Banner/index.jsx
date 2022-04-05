@@ -1,6 +1,6 @@
 import { SpeakerphoneIcon, XIcon } from '@heroicons/react/outline'
 
-export default function Banner() {
+export default function Banner({handleClose}) {
     return (
         <div className="bg-gray-600">
             <div className="max-w-9xl mx-auto py-3 px-6 lg:px-8 pl-8">
@@ -11,8 +11,8 @@ export default function Banner() {
                         </span>
 
                         <p className="ml-3 font-medium text-white truncate">
-                            <span className="md:hidden">We announced a new product!</span>
-                            <span className="hidden md:inline">Big news! We're excited to announce a brand new product.</span>
+                            <span className="md:hidden">¡Anunciamos un nuevo producto!</span>
+                            <span className="hidden md:inline">¡Grandes noticias! Estamos emocionados de anunciar un nuevo producto.</span>
                         </p>
                     </div>
 
@@ -20,6 +20,7 @@ export default function Banner() {
                         <button
                             type="button"
                             className="-mr-1 flex p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-white"
+                            onClick={handleClose}
                         >
                             <span className="sr-only">Dismiss</span>
                             <XIcon className="h-6 w-6 text-white" aria-hidden="true" />

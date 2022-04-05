@@ -1,23 +1,32 @@
-import {useState} from "react";
+import {Fragment, useState} from "react";
 
-export default function ItemCount({stock, initial, onAdd }) {
-    const [cant, setCant] = useState(0);
+export default function ItemCount({stock, initial, onAdd}) {
+    const [cant, setCant] = useState(initial);
 
     const handleIncrement = () => {
-        setCant(cant + 1);
+        cant < stock && setCant(cant + 1);
     }
 
     const handleDecrement = () => {
-        (cant > 0 && setCant(cant - 1));
+        cant > initial && setCant(cant - 1);
     }
 
     return (
-        <>
-            <button onClick={handleDecrement}>-</button>
-            {cant}
-            <button onClick={handleIncrement}>+</button>
-            <br />
-            <button onClick={() => onAdd(cant)}>Agregar al carrito</button>
-        </>
+        <Fragment>
+            <div className="h-10 bg-gray-200 text-center flex justify-around items-center">
+                <button onClick={handleDecrement}>-</button>
+                {cant}
+                <button onClick={handleIncrement}>+</button>
+            </div>
+
+            <div className="w-full h-20 text-center mt-4">
+                <button 
+                    onClick={() => onAdd(cant)}
+                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-800 md:py-4 md:text-lg md:px-10"
+                >
+                    Agregar al carrito
+                </button>
+            </div>
+        </Fragment>
     );
 }

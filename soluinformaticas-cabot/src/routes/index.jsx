@@ -1,12 +1,13 @@
 import React from 'react';
 
 import {
-  BrowserRouter as Router, Switch, Route
+    BrowserRouter as Router, Switch, Route
 } from "react-router-dom";
 
 import Home from '../views/Home';
 import Portfolio from '../views/Portfolio';
 import Contact from '../views/Contact';
+import Prices from '../views/Prices';
 import Layout from '../components/Layout';
 
 export default function Routes() {
@@ -20,6 +21,10 @@ export default function Routes() {
                     
                     <Route exact path='/portfolio' element={<Portfolio />}>
                         <Portfolio />
+                    </Route>
+
+                    <Route exact path='/prices' element={<Prices />}>
+                        <Prices />
                     </Route>
 
                     <Route exact path='/contact' element={<Contact />}>

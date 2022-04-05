@@ -1,5 +1,9 @@
+import { Fragment } from "react";
+
 export default function Icono() {
     return (
-        <img src="assets/ecommerce.png" alt="Icon" className="w-8 inline" />
+        <Fragment>
+            <img src="assets/ecommerce.png" alt="Icon" className="w-8 inline" />
+        </Fragment>
     );
 }
