@@ -119,7 +119,7 @@ export default function ItemListContainer() {
                                         {product.name}
                                     </h3>
 
-                                    <p className="text-sm text-gray-700">
+                                    <p className="text-sm text-gray-700 h-20">
                                         {product.description}
                                     </p>
                                 </div>
