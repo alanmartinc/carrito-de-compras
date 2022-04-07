@@ -12,7 +12,7 @@ export default function Portfolio() {
                     <div className="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
                         <img
                             src="https://portfolio-alan-martin-cabot.netlify.app/portfolio/1.png"
-                            alt="DESARROLLO WEB"
+                            alt="SEGURECLAMO 1"
                             className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                         />
                     </div>
@@ -22,7 +22,7 @@ export default function Portfolio() {
                     <div className="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
                         <img
                             src="https://portfolio-alan-martin-cabot.netlify.app/portfolio/2.png"
-                            alt="DESARROLLO WEB"
+                            alt="SEGURECLAMO 2"
                             className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                         />
                     </div>
@@ -34,7 +34,7 @@ export default function Portfolio() {
                     <div className="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
                         <img
                             src="https://portfolio-alan-martin-cabot.netlify.app/portfolio/3.png"
-                            alt="DESARROLLO WEB"
+                            alt="IBOTK 1"
                             className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                         />
                     </div>
@@ -44,7 +44,7 @@ export default function Portfolio() {
                     <div className="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
                         <img
                             src="https://portfolio-alan-martin-cabot.netlify.app/portfolio/4.png"
-                            alt="DESARROLLO WEB"
+                            alt="IBOTK 2"
                             className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                         />
                     </div>
@@ -56,7 +56,7 @@ export default function Portfolio() {
                     <div className="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
                         <img
                             src="https://portfolio-alan-martin-cabot.netlify.app/portfolio/7.png"
-                            alt="DESARROLLO WEB"
+                            alt="REVISTA SOLIDA 1"
                             className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                         />
                     </div>
@@ -66,7 +66,7 @@ export default function Portfolio() {
                     <div className="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
                         <img
                             src="https://portfolio-alan-martin-cabot.netlify.app/portfolio/8.png"
-                            alt="DESARROLLO WEB"
+                            alt="REVISTA SOLIDA 2"
                             className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                         />
                     </div>

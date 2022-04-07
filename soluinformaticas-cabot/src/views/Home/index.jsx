@@ -1,14 +1,14 @@
 import { Fragment, useState } from "react";
 import Banner from "../../components/Banner";
 import Header from "../../components/Header";
-import Services from "../../components/Services";
+import Services from "../Services";
 
 export default function Home() {
   const [isClose, setIsClose] = useState(true);
 
   const toggleClose = () => {
     setIsClose(!isClose);
-}
+  }
 
   return (
     <Fragment>
