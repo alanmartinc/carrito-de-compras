@@ -1,37 +1,35 @@
 import React from 'react';
 
 import {
-    BrowserRouter as Router, Switch, Route
+    BrowserRouter, Routes, Route
 } from "react-router-dom";
 
+import Layout from '../components/Layout';
 import Home from '../views/Home';
 import Portfolio from '../views/Portfolio';
-import Contact from '../views/Contact';
 import Prices from '../views/Prices';
-import Layout from '../components/Layout';
+import Details from '../views/Details';
+import Contact from '../views/Contact';
+import CodeError from '../views/CodeError';
 
-export default function Routes() {
+export default function Router() {
     return (
-        <Router>
+        <BrowserRouter>
             <Layout>
-                <Switch>
-                    <Route exact path='/' element={<Home />}>
-                        <Home />
-                    </Route>
+                <Routes>
+                    <Route path='/' element={<Home />} />
                     
-                    <Route exact path='/portfolio' element={<Portfolio />}>
-                        <Portfolio />
-                    </Route>
+                    <Route path='/portfolio' element={<Portfolio />} />
 
-                    <Route exact path='/prices' element={<Prices />}>
-                        <Prices />
-                    </Route>
+                    <Route path='/prices' element={<Prices />} />
 
-                    <Route exact path='/contact' element={<Contact />}>
-                        <Contact />
-                    </Route>
-                </Switch>
+                    <Route path='/details' element={<Details />} />
+
+                    <Route path='/contact' element={<Contact />} />
+
+                    <Route path='*' element={<CodeError />} />
+                </Routes>
             </Layout>
-        </Router>
+        </BrowserRouter>
     );
 }

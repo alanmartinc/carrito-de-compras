@@ -1,8 +1,7 @@
 import { Fragment } from "react";
 import ItemCount from "./ItemCount";
-import ItemDetailContainer from "../ItemDetailContainer";
 
-export default function Item({id, name, description, imageSrc, imageAlt, price}) {
+export default function Item({id, name, imageSrc, imageAlt, price}) {
     function handleOnAdd(cant) {
         alert(`Seleccionaste ${cant} productos`);
     }
@@ -23,10 +22,6 @@ export default function Item({id, name, description, imageSrc, imageAlt, price})
                         <h3 className="text-sm mb-4">
                             {name}
                         </h3>
-
-                        <p className="text-sm text-gray-700 h-20">
-                            {description}
-                        </p>
                     </div>
 
                     <p className="text-sm font-medium text-gray-900">{price}</p>
@@ -36,8 +31,13 @@ export default function Item({id, name, description, imageSrc, imageAlt, price})
                     <ItemCount stock={5} initial={1} onAdd={handleOnAdd} />
                 </div>
 
-                <div className="mt-4">
-                    <ItemDetailContainer />
+                <div className="w-full text-center mt-4">
+                    <a
+                        href="/details"
+                        className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-yellow-800 border-yellow-800 md:py-4 md:text-lg md:px-10"
+                    >
+                        Ver detalle
+                    </a>
                 </div>
             </div>
         </Fragment>
