@@ -11,6 +11,7 @@ import Prices from '../views/Prices';
 import Details from '../views/Details';
 import Contact from '../views/Contact';
 import CodeError from '../views/CodeError';
+import MessageConfirm from '../views/Contact/MessageConfirm';
 
 export default function Router() {
     return (
@@ -26,6 +27,8 @@ export default function Router() {
                     <Route path='/details' element={<Details />} />
 
                     <Route path='/contact' element={<Contact />} />
+
+                    <Route path='/contact-sucess' element={<MessageConfirm />} />
 
                     <Route path='*' element={<CodeError />} />
                 </Routes>

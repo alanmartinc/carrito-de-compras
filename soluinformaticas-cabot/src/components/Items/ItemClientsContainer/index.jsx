@@ -1,8 +1,8 @@
 import { Fragment, useEffect, useState } from "react";
-import ItemUser from "./ItemUser";
+import ItemClients from "./ItemClients";
 
-export default function ItemUserContainer() {
-    const [clients, setClients] = useState([]);
+export default function ItemClentsContainer() {
+    const [item, setItems] = useState([]);
 
     useEffect(() => {
         const details = {
@@ -13,7 +13,7 @@ export default function ItemUserContainer() {
         fetch("http://universities.hipolabs.com/search?country=United+States&cant=100", details)
             .then(response => response.json())
             .then(result => {
-                setClients(result)
+                setItems(result)
             })
             .catch(error => {
                 console.log('error', error)
@@ -26,7 +26,7 @@ export default function ItemUserContainer() {
                 <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
                     <div className="px-4 py-6 sm:px-0">
                         <div className="border-4 border-dashed border-gray-200 rounded-lg h-96">
-                            <ItemUser clients={clients} />
+                            <ItemClients items={item} />
                         </div>
                     </div>
                 </div>

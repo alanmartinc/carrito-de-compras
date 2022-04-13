@@ -1,15 +1,15 @@
 import Item from "../../Item";
 
-export default function ItemList({products}) {
+export default function ItemList({items}) {
     return (
-        products.map(product => (
+        items.map(item => (
             <Item 
-                key={product.id}
-                name={product.name}
-                description={product.description}
-                imageAlt={product.imageAlt}
-                imageSrc={product.imageSrc}
-                price={product.price}
+                key={item.id}
+                name={item.name}
+                description={item.description}
+                imageAlt={item.imageAlt}
+                imageSrc={item.imageSrc}
+                price={item.price}
             />
         ))
     )

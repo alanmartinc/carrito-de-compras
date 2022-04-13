@@ -1,12 +1,12 @@
 import { Fragment } from "react";
 import ItemListContainer from "../../components/Items/ItemListContainer";
-import ItemUserContainer from "../../components/Items/ItemUserContainer";
+import ItemClentsContainer from "../../components/Items/ItemClientsContainer";
 
 export default function Prices() {
     return (
         <Fragment>
             <ItemListContainer />
-            <ItemUserContainer />
+            <ItemClentsContainer />
         </Fragment>
     );
 }

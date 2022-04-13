@@ -4,13 +4,13 @@ import products from "../../../utils/Products";
 import customFetch from "../../../utils/customFetch";
 
 export default function ItemListContainer() {
-    const [items, setItems] = useState([]);
+    const [item, setItem] = useState([]);
 
     useEffect(() => {
         customFetch(3000, products)
-        .then(sucess => setItems(sucess))
+        .then(sucess => setItem(sucess))
         .catch(error => console.log(error));
-    }, [items]);
+    }, [item]);
 
     return (
         <Fragment>
@@ -22,7 +22,7 @@ export default function ItemListContainer() {
                 </div>
     
                 <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                    <ItemList products={items} />
+                    <ItemList items={item} />
                 </div>
             </div>
         </Fragment>
