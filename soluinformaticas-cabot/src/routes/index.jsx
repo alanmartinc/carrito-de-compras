@@ -5,9 +5,10 @@ import {
 } from "react-router-dom";
 
 import Layout from '../components/Layout';
-import Home from '../views/Home';
-import Portfolio from '../views/Portfolio';
+import ItemListContainer from '../components/Items/ItemListContainer';
 import Prices from '../views/Prices';
+import Services from '../views/Services';
+import Portfolio from '../views/Portfolio';
 import Details from '../views/Details';
 import Contact from '../views/Contact';
 import CodeError from '../views/CodeError';
@@ -18,13 +19,15 @@ export default function Router() {
         <BrowserRouter>
             <Layout>
                 <Routes>
-                    <Route path='/' element={<Home />} />
-                    
-                    <Route path='/portfolio' element={<Portfolio />} />
+                    <Route path='/' element={<ItemListContainer />} />
 
                     <Route path='/prices' element={<Prices />} />
 
+                    <Route path='/services' element={<Services />} />
+
                     <Route path='/details' element={<Details />} />
+                    
+                    <Route path='/portfolio' element={<Portfolio />} />
 
                     <Route path='/contact' element={<Contact />} />
 

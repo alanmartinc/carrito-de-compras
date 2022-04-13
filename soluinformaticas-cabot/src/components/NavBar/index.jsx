@@ -5,7 +5,7 @@ import Logo from "./Logo";
 export default function NavBar({handleOpenClose}) {
     return (
         <nav className="flex justify-between items-center h-16 bg-black text-white relative shadow-sm">
-            <Link to="/" className="pl-8">
+            <Link to="/prices" className="pl-8">
                 <Logo />
             </Link>
 
@@ -16,16 +16,16 @@ export default function NavBar({handleOpenClose}) {
             </div>
 
             <div className="hidden md:block">
-                <Link to="/" className="p-4 hover:bg-yellow-600">
-                    Inicio
+                <Link to="/prices" className="p-4 hover:bg-yellow-600">
+                    Precios
+                </Link>
+
+                <Link to="/services" className="p-4 hover:bg-yellow-600">
+                    Servicios
                 </Link>
 
                 <Link to="/portfolio" className="p-4 hover:bg-yellow-600">
                     Portfolio
-                </Link>
-
-                <Link to="/prices" className="p-4 hover:bg-yellow-600">
-                    Precios
                 </Link>
 
                 <Link to="/contact" className="p-4 hover:bg-yellow-600">
