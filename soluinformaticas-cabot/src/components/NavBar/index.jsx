@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import Icono from "./Icono";
+import Cart from "./Cart";
 import Logo from "./Logo";
 
 export default function NavBar({handleOpenClose}) {
     return (
         <nav className="flex justify-between items-center h-16 bg-black text-white relative shadow-sm">
-            <Link to="/prices" className="pl-8">
+            <Link to={`/products`} className="pl-8">
                 <Logo />
             </Link>
 
@@ -16,26 +16,42 @@ export default function NavBar({handleOpenClose}) {
             </div>
 
             <div className="hidden md:block">
-                <Link to="/prices" className="p-4 hover:bg-yellow-600">
-                    Precios
+                <Link to={`/products`} className="p-4 hover:bg-yellow-600">
+                    Productos
                 </Link>
 
-                <Link to="/services" className="p-4 hover:bg-yellow-600">
+                <Link to={"/category/frontend"} className="p-4 hover:bg-yellow-600">
+                    Frontend
+                </Link>
+
+                <Link to={"/category/backend"} className="p-4 hover:bg-yellow-600">
+                    Backend
+                </Link>
+
+                <Link to={"/category/diseño-grafico"} className="p-4 hover:bg-yellow-600">
+                    Diseño Grafico
+                </Link>
+
+                <Link to={"/category/marketing-digital"} className="p-4 hover:bg-yellow-600">
+                    Marketing Digital
+                </Link>
+
+                <Link to={`/services`} className="p-4 hover:bg-yellow-600">
                     Servicios
                 </Link>
 
-                <Link to="/portfolio" className="p-4 hover:bg-yellow-600">
+                <Link to={`/portfolio`} className="p-4 hover:bg-yellow-600">
                     Portfolio
                 </Link>
 
-                <Link to="/contact" className="p-4 hover:bg-yellow-600">
+                <Link to={`/contact`} className="p-4 hover:bg-yellow-600">
                     Contacto
                 </Link>
             </div>
 
             <div className="pr-8 hidden md:block">
-                <Link to="#">
-                    <Icono />
+                <Link to={`#`}>
+                    <Cart />
                 </Link>
             </div>
         </nav>

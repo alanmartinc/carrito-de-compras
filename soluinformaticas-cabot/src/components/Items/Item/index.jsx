@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 export default function Item({id, name, imageSrc, imageAlt, price}) {
@@ -32,12 +33,12 @@ export default function Item({id, name, imageSrc, imageAlt, price}) {
                 </div>
 
                 <div className="w-full text-center mt-4">
-                    <a
-                        href="/details"
+                    <Link
+                        to={`/item/${id}`}
                         className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-yellow-800 border-yellow-800 md:py-4 md:text-lg md:px-10"
                     >
                         Ver detalle
-                    </a>
+                    </Link>
                 </div>
             </div>
         </Fragment>

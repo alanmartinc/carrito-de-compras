@@ -22,7 +22,7 @@ export default function CodeError() {
             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center">
                 <div className="rounded-md shadow">
                     <a
-                        href="/prices"
+                        href={`products`}
                         className="w-full h-14 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-800 md:py-4 md:text-lg md:px-10"
                     >
                         Volver

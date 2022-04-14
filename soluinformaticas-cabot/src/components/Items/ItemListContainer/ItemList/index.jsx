@@ -5,7 +5,9 @@ export default function ItemList({items}) {
         items.map(item => (
             <Item 
                 key={item.id}
+                id={item.id}
                 name={item.name}
+                category={item.category}
                 description={item.description}
                 imageAlt={item.imageAlt}
                 imageSrc={item.imageSrc}

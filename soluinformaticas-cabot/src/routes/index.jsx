@@ -6,8 +6,9 @@ import {
 
 import Layout from '../components/Layout';
 import ItemListContainer from '../components/Items/ItemListContainer';
-import Prices from '../views/Prices';
+import Products from '../views/Products';
 import Services from '../views/Services';
+import ItemDetailContainer from '../components/Items/ItemDetailContainer';
 import Portfolio from '../views/Portfolio';
 import Details from '../views/Details';
 import Contact from '../views/Contact';
@@ -19,19 +20,23 @@ export default function Router() {
         <BrowserRouter>
             <Layout>
                 <Routes>
-                    <Route path='/' element={<ItemListContainer />} />
+                    <Route exact path='/' element={<ItemListContainer />} />
 
-                    <Route path='/prices' element={<Prices />} />
+                    <Route exact path='/category/:id' element={<ItemListContainer />} />
 
-                    <Route path='/services' element={<Services />} />
+                    <Route exact path='/products' element={<Products />} />
 
-                    <Route path='/details' element={<Details />} />
+                    <Route exact path='/services' element={<Services />} />
+
+                    <Route exact path='/item/:id' element={<ItemDetailContainer />} />
+
+                    <Route exact path='/details' element={<Details />} />
                     
-                    <Route path='/portfolio' element={<Portfolio />} />
+                    <Route exact path='/portfolio' element={<Portfolio />} />
 
-                    <Route path='/contact' element={<Contact />} />
+                    <Route exact path='/contact' element={<Contact />} />
 
-                    <Route path='/contact-sucess' element={<MessageConfirm />} />
+                    <Route exact path='/contact-sucess' element={<MessageConfirm />} />
 
                     <Route path='*' element={<CodeError />} />
                 </Routes>

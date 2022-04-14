@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import NavBar from "../NavBar";
 import DropdownMenu from "../NavBar/DropdownMenu";
 import Footer from "../Footer";
@@ -25,11 +25,14 @@ export default function Layout({children}) {
     }
 
     return (
-        <div className="h-screen">
+        <Fragment>
             <NavBar handleOpenClose={toggleOpen} />
+
             {isOpen && <DropdownMenu handleOpenCloseNew={toggleOpen} />}
+
             {children}
+            
             <Footer />
-        </div>
+        </Fragment>
     );
 }

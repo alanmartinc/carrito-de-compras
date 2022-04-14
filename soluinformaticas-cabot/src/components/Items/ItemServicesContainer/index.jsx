@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import ItemServices from "./ItemServices";
 import customFetch from "../../../utils/customFetch";
 import services from "../../../utils/Services";
+import Spinner from "../../Spinner";
 
 export default function ItemServicesContainer() {
     const [item, setItems] = useState([]);
@@ -14,7 +15,13 @@ export default function ItemServicesContainer() {
 
     return (
         <Fragment>
-            <ItemServices items={item} />
+            {item.length === 0 ? (
+                <div>
+                    <Spinner />
+                </div>
+            ) : (
+                <ItemServices items={item} />
+            )}
         </Fragment>
     );
 }

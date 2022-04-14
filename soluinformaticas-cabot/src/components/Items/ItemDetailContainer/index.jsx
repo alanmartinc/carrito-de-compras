@@ -1,16 +1,29 @@
 import { Fragment, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import products from "../../../utils/Products";
-import customFetch from "../../../utils/customFetch";
+import { useParams } from "react-router-dom";
+import Spinner from "../../Spinner";
 
 export default function ItemDetailContainer() {
     const [item, setItems] = useState([]);
 
+    const { id } = useParams();
+
     useEffect(() => {
-        customFetch(3000, products)
-        .then(sucess => setItems(sucess))
-        .catch(error => console.log(error));
-    }, [item]);
+        console.log(id);
+        const promesha = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (id) {
+            resolve(products.filter((product) => product.id === Number(id)));
+            } else {
+            reject(
+                "Hubo un problema con la carga de nuestros elementos, por favor intentalo mas tarde..."
+            );
+            }
+        }, 2000);
+        });
+        promesha.then((rta) => setItems(rta)).catch((err) => console.log(err));
+    }, [id, item]);
 
     return (
         <Fragment>
@@ -21,8 +34,14 @@ export default function ItemDetailContainer() {
                     </h1>
                 </div>
     
-                <div className="grid grid-cols-1 gap-y-10 gap-x-6 xl:gap-x-8">
-                    <ItemDetail items={item} />
+                <div className="h-screen grid grid-cols-1 gap-y-10 gap-x-6 xl:gap-x-8">
+                    {item.length === 0 ? (
+                        <div>
+                            <Spinner />
+                        </div>
+                    ) : (
+                        <ItemDetail items={item} />
+                    )}
                 </div>
             </div>
         </Fragment>

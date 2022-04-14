@@ -2,6 +2,7 @@ const products = [
     {
         id: 1,
         name: 'DESARROLLO WEB',
+        category: "frontend",
         description: 'Diseño UI/UX, maquetación, responsive web design y lógica del lado del cliente.',
         imageSrc: 'https://dwvisual.com.ar/wp-content/uploads/2019/09/desarrollo-web.jpg',
         imageAlt: "DESARROLLO WEB",
@@ -10,6 +11,7 @@ const products = [
     {
         id: 2,
         name: 'DISEÑO GRÁFICO',
+        category: "diseño-grafico",
         description: 'Diseño de logotipos, flyers, banners, tarjetas personales, publicitario, editorial, redes sociales.',
         imageSrc: 'https://www.certus.edu.pe/blog/wp-content/uploads/2020/12/por-que-estudiar-diseno-grafico-razones-importantes-1-1200x720.jpg',
         imageAlt: "DISEÑO GRÁFICO",
@@ -18,6 +20,7 @@ const products = [
     {
         id: 3,
         name: 'MARKETING DIGITAL',
+        category: "marketing-digital",
         description: 'Implementamos estrategias digitales para dar a conocer marcas utilizando los recursos que nos brinda internet.',
         imageSrc: 'https://www.unir.net/wp-content/uploads/2014/10/2202_empresa_fichasweb_shutterstock_1932042689_1920x10802.jpg',
         imageAlt: "MARKETING DIGITAL",
@@ -26,6 +29,7 @@ const products = [
     {
         id: 4,
         name: 'RESPONSIVE WEB DESIGN',
+        category: "frontend",
         description: 'Sitios web adaptados a diferentes tamaños de pantallas para facilitar la navegación.',
         imageSrc: 'https://accu-web.co.uk/wp-content/uploads/2021/10/pexels-negative-space-34140.jpg.webp',
         imageAlt: "RESPONSIVE WEB DESIGN",
@@ -34,6 +38,7 @@ const products = [
     {
         id: 5,
         name: 'POSICIONAMIENTO SEO',
+        category: "frontend",
         description: 'Nos enfocamos en posicionar su empresa en la web (Optimización para motores de búsqueda).',
         imageSrc: 'https://altamiraweb.net/wp-content/uploads/2019/04/Lo-que-debes-buscar-en-una-agencia-SEO-para-tu-empresa.jpg',
         imageAlt: "POSICIONAMIENTO SEO",
@@ -42,6 +47,7 @@ const products = [
     {
         id: 6,
         name: 'AUTOMATIZACIÓN',
+        category: "frontend",
         description: 'Automatización y digitalización de procesos manuales / generación de reportes.',
         imageSrc: 'https://www.auraquantic.com/wp-content/uploads/2020/03/automatio-article-blog.png',
         imageAlt: "AUTOMATIZACIÓN",
@@ -50,6 +56,7 @@ const products = [
     {
         id: 7,
         name: 'DESARROLLO BACKEND',
+        category: "backend",
         description: 'Desarrollo de APPs, analisis, seguridad, rendimiento y lógica del lado del servidor.',
         imageSrc: 'https://storage.googleapis.com/smartninja/opciones-desarrollador-1623141334.jpeg',
         imageAlt: "DESARROLLO BACKEND",
@@ -58,6 +65,7 @@ const products = [
     {
         id: 8,
         name: 'INTELIGENCIA ARTIFICIAL',
+        category: "backend",
         description: 'Con Data Science optimizamos la información para un mejor rendimiento del negocio',
         imageSrc: 'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2019/08/inteligencia-artificial_0.jpg?itok=ELJn5KWr',
         imageAlt: "INTELIGENCIA ARTIFICIAL",
