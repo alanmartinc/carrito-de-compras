@@ -1,9 +1,13 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import ItemCount from "../../Item/ItemCount";
+import { Link } from "react-router-dom";
 
 export default function ItemDetail({items}) {
+    const [cant, setCant] = useState(0);
+
     function handleOnAdd(cant) {
         alert(`Seleccionaste ${cant} productos`);
+        setCant(cant);
     }
 
     return (
@@ -33,7 +37,7 @@ export default function ItemDetail({items}) {
                     </div>
 
                     <div className="mt-4">
-                        <ItemCount stock={5} initial={1} onAdd={handleOnAdd} />
+                        {cant > 0 ? <Link to='/cart'>Ir al carrito</Link> : <ItemCount initial={1} stock={5} onAdd={handleOnAdd}/>}
                     </div>
                 </div>
             ))}

@@ -14,6 +14,7 @@ import Details from '../views/Details';
 import Contact from '../views/Contact';
 import CodeError from '../views/CodeError';
 import MessageConfirm from '../views/Contact/MessageConfirm';
+import Cart from '../views/Cart';
 
 export default function Router() {
     return (
@@ -39,6 +40,8 @@ export default function Router() {
                     <Route exact path='/contact-sucess' element={<MessageConfirm />} />
 
                     <Route path='*' element={<CodeError />} />
+
+                    <Route  path='/cart' element={<Cart/>}/>
                 </Routes>
             </Layout>
         </BrowserRouter>
