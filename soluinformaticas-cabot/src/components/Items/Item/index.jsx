@@ -3,14 +3,10 @@ import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 export default function Item({id, name, imageSrc, imageAlt, price}) {
-    function handleOnAdd(cant) {
-        alert(`Seleccionaste ${cant} productos`);
-    }
-
     return (
         <Fragment>
             <div key={id}>
-                <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 h-80 lg:aspect-none">
+                <div className="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 h-80 lg:aspect-none">
                     <img
                         src={imageSrc}
                         alt={imageAlt}
@@ -29,7 +25,7 @@ export default function Item({id, name, imageSrc, imageAlt, price}) {
                 </div>
 
                 <div className="mt-4">
-                    <ItemCount stock={5} initial={1} onAdd={handleOnAdd} />
+                    <ItemCount stock={5} initial={1} />
                 </div>
 
                 <div className="w-full text-center mt-4">

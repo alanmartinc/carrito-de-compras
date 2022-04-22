@@ -36,7 +36,7 @@ export default function DropdownMenu({handleOpenCloseNew}) {
                 Contacto
             </Link>
 
-            <Link to={`#`} className="p-4">
+            <Link to={`/cart`} className="p-4">
                 <Cart />
             </Link>
         </div>

@@ -15,35 +15,38 @@ import Contact from '../views/Contact';
 import CodeError from '../views/CodeError';
 import MessageConfirm from '../views/Contact/MessageConfirm';
 import Cart from '../views/Cart';
+import ContextProvider from '../cartContext';
 
 export default function Router() {
     return (
-        <BrowserRouter>
-            <Layout>
-                <Routes>
-                    <Route exact path='/' element={<ItemListContainer />} />
+        <ContextProvider>
+            <BrowserRouter>
+                <Layout>
+                    <Routes>
+                        <Route exact path='/' element={<ItemListContainer />} />
 
-                    <Route exact path='/category/:id' element={<ItemListContainer />} />
+                        <Route exact path='/category/:id' element={<ItemListContainer />} />
 
-                    <Route exact path='/products' element={<Products />} />
+                        <Route exact path='/products' element={<Products />} />
 
-                    <Route exact path='/services' element={<Services />} />
+                        <Route exact path='/services' element={<Services />} />
 
-                    <Route exact path='/item/:id' element={<ItemDetailContainer />} />
+                        <Route exact path='/item/:id' element={<ItemDetailContainer />} />
 
-                    <Route exact path='/details' element={<Details />} />
-                    
-                    <Route exact path='/portfolio' element={<Portfolio />} />
+                        <Route exact path='/details' element={<Details />} />
+                        
+                        <Route exact path='/portfolio' element={<Portfolio />} />
 
-                    <Route exact path='/contact' element={<Contact />} />
+                        <Route exact path='/contact' element={<Contact />} />
 
-                    <Route exact path='/contact-sucess' element={<MessageConfirm />} />
+                        <Route exact path='/contact-sucess' element={<MessageConfirm />} />
 
-                    <Route path='*' element={<CodeError />} />
+                        <Route path='*' element={<CodeError />} />
 
-                    <Route  path='/cart' element={<Cart/>}/>
-                </Routes>
-            </Layout>
-        </BrowserRouter>
+                        <Route  path='/cart' element={<Cart/>}/>
+                    </Routes>
+                </Layout>
+            </BrowserRouter>
+        </ContextProvider>
     );
 }

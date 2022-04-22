@@ -50,7 +50,7 @@ export default function NavBar({handleOpenClose}) {
             </div>
 
             <div className="pr-8 hidden md:block">
-                <Link to={`#`}>
+                <Link to={`/cart`}>
                     <Cart />
                 </Link>
             </div>

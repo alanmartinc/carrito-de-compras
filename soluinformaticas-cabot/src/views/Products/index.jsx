@@ -1,6 +1,5 @@
 import { Fragment, useState } from "react";
 import ItemListContainer from "../../components/Items/ItemListContainer";
-import ItemClentsContainer from "../../components/Items/ItemClientsContainer";
 import Banner from "../../components/Banner";
 
 export default function Products() {
@@ -15,7 +14,6 @@ export default function Products() {
             {isClose && <Banner handleClose={toggleClose} className="hidden" /> }
 
             <ItemListContainer />
-            <ItemClentsContainer />
         </Fragment>
     );
 }

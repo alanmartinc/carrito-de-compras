@@ -1,9 +1,9 @@
 import { Fragment, useEffect, useState } from "react";
-/* import Spinner from "../../Spinner"; */
-/* import ItemClients from "./ItemClients"; */
+import Spinner from "../../Spinner";
+import ItemClients from "./ItemClients";
 
 export default function ItemClentsContainer() {
-    const [/* item */, setItems] = useState([]);
+    const [item, setItems] = useState([]);
 
     useEffect(() => {
         const details = {
@@ -33,13 +33,13 @@ export default function ItemClentsContainer() {
                         </div>
 
                         <div className="border-4 border-dashed border-gray-200 rounded-lg h-96">
-                            {/* {item.length === 0 ? (
+                            {item.length === 0 ? (
                                 <div>
                                     <Spinner />
                                 </div>
                             ) : (
                                 <ItemClients items={item} />
-                            )} */}
+                            )}
                         </div>
                     </div>
                 </div>
