@@ -1,26 +1,8 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment} from "react";
 import Spinner from "../../Spinner";
 import ItemClients from "./ItemClients";
 
 export default function ItemClentsContainer() {
-    const [item, setItems] = useState([]);
-
-    useEffect(() => {
-        const details = {
-            method: 'GET',
-            redirect: 'follow'
-        };
-
-        fetch("http://universities.hipolabs.com/search?country=United+States&cant=100", details)
-            .then(response => response.json())
-            .then(result => {
-                setItems(result)
-            })
-            .catch(error => {
-                console.log('error', error)
-            });
-    }, []);
-
     return (
         <Fragment>
             <main>
@@ -32,14 +14,8 @@ export default function ItemClentsContainer() {
                             </h1>
                         </div>
 
-                        <div className="border-4 border-dashed border-gray-200 rounded-lg h-96">
-                            {item.length === 0 ? (
-                                <div>
-                                    <Spinner />
-                                </div>
-                            ) : (
-                                <ItemClients items={item} />
-                            )}
+                        <div className="border-4 border-dashed border-gray-200 rounded-lg p-4 text-center">
+                            <ItemClients />
                         </div>
                     </div>
                 </div>
