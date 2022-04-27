@@ -5,6 +5,10 @@ import Spinner from "../../components/Spinner";
 export default function Cart() {
   let { carrito, removeItem } = useContext(CartContext);
 
+  function handleOnAdd() {
+    alert("Compra Exitosa!");
+    }
+
   return (
     <div className="max-w-2xl mx-auto pt-16 pb-6 px-4 sm:pt-24 sm:px-6 lg:px-8">
         <div className="lg:text-center">
@@ -55,6 +59,15 @@ export default function Cart() {
             )}
         </div>
         ))}
+
+        <div className="w-full text-center mt-4">
+            <button 
+                onClick={()=>handleOnAdd()}
+                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-800 md:py-4 md:text-lg md:px-10"
+            >
+                Comprar
+            </button>
+        </div>
     </div>
   );
 }

@@ -6,8 +6,10 @@ export default function Cart() {
     
     return (
         <Fragment>
-            <img src="assets/ecommerce.png" alt="Icon" className="w-8 inline" />
-            {carrito.length}
+            <div className="flex">
+                <img src="assets/ecommerce.png" alt="Icon" className="w-8 inline" />
+                <p className="pl-4">{carrito.length}</p>
+            </div>
         </Fragment>
     );
 }
