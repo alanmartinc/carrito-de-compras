@@ -3,7 +3,7 @@ import React, { createContext, Fragment, useState } from 'react'
 export const CartContext = createContext();
 
 export default function ContextProvider({children}) {
-    const [carrito, setCarrito] = useState([{id: 1, name: "example"}]);
+    const [carrito, setCarrito] = useState([]);
 
     const addItem = (products) => [...carrito, products];
 

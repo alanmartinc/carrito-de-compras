@@ -43,7 +43,7 @@ export default function Router() {
 
                         <Route path='*' element={<CodeError />} />
 
-                        <Route  path='/cart' element={<Cart/>}/>
+                        <Route  path='/cart' element={<Cart />}/>
                     </Routes>
                 </Layout>
             </BrowserRouter>
