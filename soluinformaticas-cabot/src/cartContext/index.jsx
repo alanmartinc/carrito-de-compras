@@ -1,25 +1,38 @@
-import React, { createContext, Fragment, useState } from 'react'
+import React, { createContext, Fragment, useState } from "react";
 
 export const CartContext = createContext();
 
-export default function ContextProvider({children}) {
-    const [carrito, setCarrito] = useState([]);
+export default function ContextProvider({ children }) {
+  const [carrito, setCarrito] = useState([]);
 
-    const addItem = (products) => [...carrito, products];
-
-    const removeItem = (id) => {
-        setCarrito([carrito.filter((name) => name.id !== id)]);
+  const addItem = (product) => {
+    const productIndex = carrito.findIndex((item) => item.id === product.id);
+    if (productIndex === -1) {
+      if (carrito.length === 0) {
+        setCarrito([product]);
+      } else {
+        setCarrito([...carrito, product]);
+      }
+    } else {
+      const newCarrito = [...carrito];
+      newCarrito[productIndex].quantity = newCarrito[productIndex].quantity + product.quantity;
+      setCarrito(newCarrito);
     }
+  };
 
-    const clear = () => {
-        setCarrito([]);
-    }
+  const removeItem = (id) => {
+    setCarrito(carrito.filter((name) => name.id !== id));
+  };
 
-    return(
-        <Fragment>
-            <CartContext.Provider value={{carrito, setCarrito, addItem, removeItem, clear}}>
-                {children}
-            </CartContext.Provider>
-        </Fragment>
-    );
+  const clear = () => {
+    setCarrito([]);
+  };
+
+  return (
+    <Fragment>
+      <CartContext.Provider value={{ carrito, addItem, removeItem, clear }}>
+        {children}
+      </CartContext.Provider>
+    </Fragment>
+  );
 }

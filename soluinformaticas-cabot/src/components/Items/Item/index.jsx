@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
-export default function Item({id, name, imageSrc, imageAlt, price}) {
+export default function Item({id, name, imageSrc, imageAlt, price, description}) {
     return (
         <Fragment>
             <div key={id}>
@@ -25,7 +25,7 @@ export default function Item({id, name, imageSrc, imageAlt, price}) {
                 </div>
 
                 <div className="mt-4">
-                    <ItemCount stock={5} initial={1} />
+                    <ItemCount product={{id, name, imageSrc, imageAlt, price, description}} stock={5} initial={1} />
                 </div>
 
                 <div className="w-full text-center mt-4">

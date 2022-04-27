@@ -6,7 +6,7 @@ export default function ItemDetail({items}) {
     const [cant, setCant] = useState(0);
 
     function handleOnAdd(cant) {
-        alert(`Seleccionaste ${cant} productos`);
+        console.log(cant);
         setCant(cant);
     }
 

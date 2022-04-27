@@ -1,20 +1,60 @@
 import { useContext } from "react";
 import { CartContext } from "../../cartContext";
+import Spinner from "../../components/Spinner";
 
 export default function Cart() {
-    let {carrito} = useContext(CartContext);
+  let { carrito, removeItem } = useContext(CartContext);
 
-    return (
-        <div className="h-screen max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-            <div className="text-center">
-                <h1 className="tracking-tight font-extrabold text-gray-900 text-2xl md:text-4xl mb-6">
-                    Carrito de Compra
-                </h1>
-
-                <p className="font-extrabold text-gray-700 mb-6">
-                    Cant {carrito.length}
-                </p>
-            </div>
+  return (
+    <div className="max-w-2xl mx-auto pt-16 pb-6 px-4 sm:pt-24 sm:px-6 lg:px-8">
+        <div className="lg:text-center">
+            <h1 className="tracking-tight font-extrabold text-gray-900 text-2xl md:text-4xl mb-6">
+                Carrito de Compra
+            </h1>
         </div>
-    );
+
+        {carrito.length > 0 && carrito.map((items, index) => (
+        <div key={index} className="grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 pb-20">
+            {items.length === 0 ? (
+                <div>
+                    <Spinner />
+                </div>
+            ) : (
+                <div key={items.id}>
+                    <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 h-80 lg:aspect-none">
+                        <img
+                            src={items.imageSrc}
+                            alt={items.imageAlt}
+                            className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                        />
+                    </div>
+
+                    <div className="mt-4 flex justify-between">
+                        <div>
+                            <h3 className="text-lg mb-4">
+                                {items.name}
+                            </h3>
+
+                            <p className="text-lg text-gray-700 h-20">
+                                {items.description}
+                            </p>
+                        </div>
+
+                        <p className="text-lg font-medium text-gray-900">{items.price}</p>
+                    </div>
+                    
+                    <div className="w-full text-center mt-4">
+                        <button 
+                            onClick={()=>removeItem(items.id)}
+                            className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-800 md:py-4 md:text-lg md:px-10"
+                        >
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+            )}
+        </div>
+        ))}
+    </div>
+  );
 }

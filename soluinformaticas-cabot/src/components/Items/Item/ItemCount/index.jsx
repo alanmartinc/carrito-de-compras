@@ -1,7 +1,7 @@
 import {Fragment, useContext, useState} from "react";
 import { CartContext } from "../../../../cartContext";
 
-export default function ItemCount({stock, initial}) {
+export default function ItemCount({product, stock, initial}) {
     let {addItem} = useContext(CartContext);
     let {clear} = useContext(CartContext);
     
@@ -25,7 +25,7 @@ export default function ItemCount({stock, initial}) {
 
             <div className="w-full text-center mt-4">
                 <button 
-                    onClick={() => addItem(alert(`Seleccionaste ${cant} productos`))}
+                    onClick={() => addItem({...product, quantity: cant})}
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-800 md:py-4 md:text-lg md:px-10"
                 >
                     Agregar al carrito
