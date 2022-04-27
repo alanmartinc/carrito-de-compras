@@ -11,7 +11,7 @@ export default function ItemDetailContainer() {
 
     useEffect(() => {
         console.log(id);
-        const promesha = new Promise((resolve, reject) => {
+        const promesa = new Promise((resolve, reject) => {
         setTimeout(() => {
             if (id) {
             resolve(products.filter((product) => product.id === Number(id)));
@@ -22,13 +22,13 @@ export default function ItemDetailContainer() {
             }
         }, 2000);
         });
-        promesha.then((rta) => setItems(rta)).catch((err) => console.log(err));
+        promesa.then((rta) => setItems(rta)).catch((err) => console.log(err));
     }, [id, item]);
 
     return (
         <Fragment>
             <div className="max-w-2xl mx-auto pt-16 pb-6 px-4 sm:pt-24 sm:px-6 lg:px-8">
-                <div className="lg:text-center">
+                <div className="text-center">
                     <h1 className="tracking-tight font-extrabold text-gray-900 text-2xl md:text-4xl mb-6">
                         Detalles
                     </h1>

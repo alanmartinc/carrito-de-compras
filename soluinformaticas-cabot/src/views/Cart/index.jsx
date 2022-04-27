@@ -3,7 +3,7 @@ import { CartContext } from "../../cartContext";
 import Spinner from "../../components/Spinner";
 
 export default function Cart() {
-  let { carrito, removeItem } = useContext(CartContext);
+  let { cart, removeItem } = useContext(CartContext);
 
   function handleOnAdd() {
     alert("Compra Exitosa!");
@@ -11,13 +11,13 @@ export default function Cart() {
 
   return (
     <div className="max-w-2xl mx-auto pt-16 pb-6 px-4 sm:pt-24 sm:px-6 lg:px-8">
-        <div className="lg:text-center">
+        <div className="text-center">
             <h1 className="tracking-tight font-extrabold text-gray-900 text-2xl md:text-4xl mb-6">
                 Carrito de Compra
             </h1>
         </div>
 
-        {carrito.length > 0 && carrito.map((items, index) => (
+        {cart.length > 0 && cart.map((items, index) => (
         <div key={index} className="grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 pb-20">
             {items.length === 0 ? (
                 <div>
@@ -55,19 +55,19 @@ export default function Cart() {
                             Eliminar
                         </button>
                     </div>
+
+                    <div className="w-full text-center mt-4">
+                        <button 
+                            onClick={()=>handleOnAdd()}
+                            className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-800 md:py-4 md:text-lg md:px-10"
+                        >
+                            Comprar {items.quantity}
+                        </button>
+                    </div>
                 </div>
             )}
         </div>
         ))}
-
-        <div className="w-full text-center mt-4">
-            <button 
-                onClick={()=>handleOnAdd()}
-                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-800 md:py-4 md:text-lg md:px-10"
-            >
-                Comprar
-            </button>
-        </div>
     </div>
   );
 }

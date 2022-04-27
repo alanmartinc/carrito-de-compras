@@ -3,11 +3,11 @@ import ItemCount from "../../Item/ItemCount";
 import { Link } from "react-router-dom";
 
 export default function ItemDetail({items}) {
-    const [cant, setCant] = useState(0);
+    const [quantity, setQuantity] = useState(0);
 
-    function handleOnAdd(cant) {
-        console.log(cant);
-        setCant(cant);
+    function handleOnAdd(quantity) {
+        console.log(quantity);
+        setQuantity(quantity);
     }
 
     return (
@@ -37,7 +37,7 @@ export default function ItemDetail({items}) {
                     </div>
 
                     <div className="mt-4">
-                        {cant > 0 ? <Link to='/cart'>Ir al carrito</Link> : <ItemCount initial={1} stock={5} onAdd={handleOnAdd}/>}
+                        {quantity > 0 ? <Link to='/cart'>Ir al carrito</Link> : <ItemCount initial={1} stock={5} onAdd={handleOnAdd}/>}
                     </div>
                 </div>
             ))}
