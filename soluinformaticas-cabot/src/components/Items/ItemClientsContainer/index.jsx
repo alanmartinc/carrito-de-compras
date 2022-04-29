@@ -1,5 +1,4 @@
 import { Fragment} from "react";
-import Spinner from "../../Spinner";
 import ItemClients from "./ItemClients";
 
 export default function ItemClentsContainer() {

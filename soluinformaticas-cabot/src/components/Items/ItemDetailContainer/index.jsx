@@ -1,29 +1,21 @@
 import { Fragment, useEffect, useState } from "react";
+import { getDoc, doc } from 'firebase/firestore';
 import ItemDetail from "./ItemDetail";
-import products from "../../../utils/Products";
 import { useParams } from "react-router-dom";
 import Spinner from "../../Spinner";
+import { firestoreDb } from "../../../services/firebase";
 
-export default function ItemDetailContainer() {
+export default function ItemDetailContainer({items}) {
     const [item, setItems] = useState([]);
 
     const { id } = useParams();
 
     useEffect(() => {
-        console.log(id);
-        const promesa = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (id) {
-            resolve(products.filter((product) => product.id === Number(id)));
-            } else {
-            reject(
-                "Hubo un problema con la carga de nuestros elementos, por favor intentalo mas tarde..."
-            );
-            }
-        }, 2000);
-        });
-        promesa.then((rta) => setItems(rta)).catch((err) => console.log(err));
-    }, [id, item]);
+        getDoc(doc(firestoreDb, 'products', id)).then(response => {
+            const producto = {id: response, ...response.data()}
+            setItems(producto)
+        })
+    }, [id, item])
 
     return (
         <Fragment>
@@ -40,7 +32,7 @@ export default function ItemDetailContainer() {
                             <Spinner />
                         </div>
                     ) : (
-                        <ItemDetail items={item} />
+                        <ItemDetail {...items} />
                     )}
                 </div>
             </div>

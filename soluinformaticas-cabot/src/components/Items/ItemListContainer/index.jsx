@@ -1,8 +1,10 @@
 import { Fragment, useEffect, useState } from "react";
+import { getDocs, collection, query, where } from 'firebase/firestore';
 import ItemList from "./ItemList";
-import products from "../../../utils/Products";
 import { useParams } from "react-router-dom";
 import Spinner from "../../Spinner";
+import ItemClentsContainer from "../ItemClientsContainer";
+import { firestoreDb } from "../../../services/firebase";
 
 export default function ItemListContainer() {
     const [item, setItem] = useState([]);
@@ -10,23 +12,18 @@ export default function ItemListContainer() {
     const { id } = useParams();
 
     useEffect(() => {
-        const promesa = new Promise((resolve, reject) => {
+        const collectionRef = id 
+        ? query(collection(firestoreDb, 'products'), where('category', '==', id))
+        : collection(firestoreDb, 'products')
 
-            setTimeout(() => {
-                if (id) {
-                resolve(products.filter((product) => product.category === id));
-                } else {
-                resolve(products.filter((product) => product.category));
-                }
-            }, 2000);
-        });
-
-        promesa
-        .then((sucess) => {
-            setItem(sucess);
+        getDocs(collectionRef).then(response => {
+        const products = response.docs.map(doc => {
+            return { id: doc.id, ...doc.data()}
         })
-        .catch((error) => error);
-    }, [id, item]);
+        setItem(products)
+        })
+    }, [id])
+    
 
     return (
         <Fragment>
@@ -47,6 +44,8 @@ export default function ItemListContainer() {
                     )}
                 </div>
             </div>
+
+            <ItemClentsContainer />
         </Fragment>
     );
 }
