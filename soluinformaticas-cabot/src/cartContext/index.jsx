@@ -15,9 +15,14 @@ export default function ContextProvider({ children }) {
       }
     } else {
       const newCart = [...cart];
-      newCart[productIndex].quantity = newCart[productIndex].quantity + product.quantity;
+      newCart[productIndex].quantity =
+        newCart[productIndex].quantity + product.quantity;
       setCart(newCart);
     }
+  };
+
+  const isInCart = (id) => {
+    return cart.some((product) => product.id === id);
   };
 
   const removeItem = (id) => {
@@ -30,7 +35,9 @@ export default function ContextProvider({ children }) {
 
   return (
     <Fragment>
-      <CartContext.Provider value={{ cart, addItem, removeItem, clear }}>
+      <CartContext.Provider
+        value={{ cart, addItem, removeItem, clear, isInCart }}
+      >
         {children}
       </CartContext.Provider>
     </Fragment>
