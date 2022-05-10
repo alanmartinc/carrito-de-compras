@@ -7,7 +7,7 @@ import ItemClentsContainer from "../ItemClientsContainer";
 import { firestoreDb } from "../../../services/firebase";
 
 export default function ItemListContainer() {
-    const [item, setItem] = useState([]);
+    const [items, setItems] = useState([]);
 
     const { id } = useParams();
 
@@ -18,9 +18,9 @@ export default function ItemListContainer() {
 
         getDocs(collectionRef).then(response => {
         const products = response.docs.map(doc => {
-            return { id: doc.id, ...doc.data()}
+            return { ...doc.data(), id: doc.id}
         })
-        setItem(products)
+        setItems(products)
         })
     }, [id])
     
@@ -35,12 +35,12 @@ export default function ItemListContainer() {
                 </div>
     
                 <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                    {item.length === 0 ? (
+                    {items.length === 0 ? (
                         <div>
                             <Spinner />
                         </div>
                     ) : (
-                        <ItemList items={item} />
+                        <ItemList items={items} />
                     )}
                 </div>
             </div>

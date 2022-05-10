@@ -6,14 +6,13 @@ import Spinner from "../../Spinner";
 import { firestoreDb } from "../../../services/firebase";
 
 export default function ItemDetailContainer() {
-  const [items, setItems] = useState([]);
+  const [item, setItem] = useState([]);
 
   const { id } = useParams();
 
   useEffect(() => {
     getDoc(doc(firestoreDb, "products", id)).then((response) => {
-      const producto = { id: response, ...response.data() };
-      setItems(producto);
+      setItem(response.data());
     });
   }, [id]);
 
@@ -26,13 +25,13 @@ export default function ItemDetailContainer() {
           </h1>
         </div>
 
-        <div className="h-screen grid grid-cols-1 gap-y-10 gap-x-6 xl:gap-x-8">
-          {items.length === 0 ? (
+        <div className="grid grid-cols-1 gap-y-10 gap-x-6 xl:gap-x-8">
+          {item.length === 0 ? (
             <div>
               <Spinner />
             </div>
           ) : (
-            <ItemDetail />
+            <ItemDetail {...item} />
           )}
         </div>
       </div>

@@ -1,7 +1,5 @@
 import { Fragment, useContext } from "react";
 import ItemCount from "../../Item/ItemCount";
-import { Link } from "react-router-dom";
-import { CartContext } from "../../../../cartContext";
 
 export default function ItemDetail({
   id,
@@ -11,8 +9,6 @@ export default function ItemDetail({
   description,
   price,
 }) {
-  const { isInCart } = useContext(CartContext);
-
   return (
     <Fragment>
       <div key={id}>
@@ -34,20 +30,7 @@ export default function ItemDetail({
           <p className="text-lg font-medium text-gray-900">{price}</p>
         </div>
 
-        <div className="mt-4">
-          {isInCart(id) > 0 ? (
-            <div className="w-full text-center mt-4">
-              <Link
-                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-800 md:py-4 md:text-lg md:px-10"
-                to="/cart"
-              >
-                Ir al carrito
-              </Link>
-            </div>
-          ) : (
-            <ItemCount initial={1} stock={5} />
-          )}
-        </div>
+        <ItemCount initial={1} stock={5} />
       </div>
     </Fragment>
   );
