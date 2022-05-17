@@ -18,7 +18,10 @@ export default function Cart() {
 
   return (
     <Fragment>
-      {!creatingOrder && !id && (
+      {cart.length === 0 && !id && !creatingOrder && (
+        <h1>No hay productos en el carrito</h1>
+      )}
+      {!creatingOrder && !id && cart.length > 0 && (
         <div className="max-w-2xl mx-auto pt-16 pb-6 px-4 sm:pt-24 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="tracking-tight font-extrabold text-gray-900 text-2xl md:text-4xl mb-6">

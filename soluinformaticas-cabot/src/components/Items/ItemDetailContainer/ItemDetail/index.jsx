@@ -1,4 +1,4 @@
-import { Fragment, useContext } from "react";
+import { Fragment } from "react";
 import ItemCount from "../../Item/ItemCount";
 
 export default function ItemDetail({
@@ -30,7 +30,18 @@ export default function ItemDetail({
           <p className="text-lg font-medium text-gray-900">{price}</p>
         </div>
 
-        <ItemCount initial={1} stock={5} />
+        <ItemCount
+          product={{
+            id,
+            name,
+            imageSrc,
+            imageAlt,
+            description,
+            price,
+          }}
+          initial={1}
+          stock={5}
+        />
       </div>
     </Fragment>
   );
