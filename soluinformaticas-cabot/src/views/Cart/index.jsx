@@ -31,7 +31,7 @@ export default function Cart() {
               <div className="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
                 <img
                   src="assets/accessDenied.png"
-                  alt="Error 404"
+                  alt="Access Denied"
                   className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                 />
               </div>
@@ -131,7 +131,7 @@ export default function Cart() {
               <div className="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
                 <img
                   src="assets/orderConfirmed.png  "
-                  alt="Error 404"
+                  alt="Order Confirmed"
                   className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                 />
               </div>
